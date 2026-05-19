@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The wage–cost gap: why rents go unpaid</title>
+<meta name="description" content="Productivity has climbed since the 1970s while wages for the bottom half have not — and New York City affordable-housing rent collection is sliding.">
+<link rel="stylesheet" href="https://use.typekit.net/qqk2vto.css">
+<style>
+:root{
+  --vc-black:#050507;--vc-white:#ffffff;--vc-cloud:#dddddd;
+  --vc-orange:#ff7c53;--vc-magenta:#e7466d;--vc-cerulean:#217ebe;--vc-indigo:#394882;
+  --vc-charcoal:#707175;--vc-cloud-50:#eeeeee;--vc-paper:#f7f7f4;
+  --vc-sans:"halyard-text","Inter","Helvetica Neue",Arial,sans-serif;
+  --vc-serif:"GascogneTS","Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@font-face{font-family:'GascogneTS';src:url('https://vital-city-nyc.github.io/vital-city-design-system/fonts/GascogneTS-Light.ttf') format('truetype');font-weight:300;font-style:normal;font-display:swap;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{background:var(--vc-white);color:var(--vc-black);}
+body{font-family:var(--vc-sans);font-weight:300;line-height:1.5;padding:24px 16px;display:flex;justify-content:center;}
+.card{width:100%;max-width:880px;background:var(--vc-white);border:1px solid var(--vc-black);overflow:hidden;}
+body.embed{padding:0;}
+body.embed .card{border:none;max-width:none;}
+.head{padding:22px 24px 20px;border-bottom:1px solid var(--vc-cloud);}
+.kicker{font-weight:700;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--vc-charcoal);margin-bottom:8px;}
+.head h1{font-weight:700;font-size:1.7rem;line-height:1.15;letter-spacing:-.005em;margin-bottom:8px;}
+.head .dek{font-size:.92rem;max-width:62ch;}
+.head .dek b{font-weight:700;}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);background:var(--vc-paper);border-bottom:1px solid var(--vc-cloud);}
+.stat{padding:14px 16px 12px;border-right:1px solid var(--vc-cloud);}
+.stat:last-child{border-right:none;}
+.stat .num{font-family:var(--vc-serif);font-weight:300;font-size:1.7rem;line-height:1;margin-bottom:4px;}
+.stat .lbl{font-weight:700;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--vc-charcoal);}
+
+.section{padding:22px 24px;border-bottom:1px solid var(--vc-cloud);}
+.section-title{font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--vc-charcoal);margin-bottom:4px;}
+.section-sub{font-size:.82rem;color:var(--vc-charcoal);margin-bottom:14px;}
+
+.divergence{position:relative;height:300px;}
+.divergence svg{width:100%;height:100%;display:block;}
+
+.collection-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.coll{padding:14px 16px;background:var(--vc-paper);border:1px solid var(--vc-cloud);}
+.coll h3{font-weight:700;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--vc-charcoal);margin-bottom:10px;}
+.coll-pair{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;}
+.coll-then,.coll-now{flex:1;}
+.coll-num{font-family:var(--vc-serif);font-weight:300;font-size:2rem;line-height:1;}
+.coll-yr{font-size:.7rem;color:var(--vc-charcoal);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:4px;}
+.coll-arrow{font-family:var(--vc-serif);font-size:1.4rem;color:var(--vc-magenta);align-self:center;}
+
+.foot{padding:18px 24px 22px;background:var(--vc-paper);}
+.foot h3{font-weight:700;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--vc-charcoal);margin-bottom:8px;}
+.foot p{font-size:.78rem;line-height:1.55;color:var(--vc-charcoal);max-width:72ch;margin-bottom:6px;}
+
+@media (max-width:640px){
+  .stats{grid-template-columns:1fr;}
+  .stat{border-right:none;border-bottom:1px solid var(--vc-cloud);}
+  .stat:last-child{border-bottom:none;}
+  .collection-grid{grid-template-columns:1fr;}
+  .head h1{font-size:1.35rem;}
+}
+</style>
+<script>
+if (new URLSearchParams(location.search).get('embed') === '1') {
+  document.addEventListener('DOMContentLoaded',()=>document.body.classList.add('embed'));
+  const postHeight = () => {
+    const h = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+    parent.postMessage({ type: 'vc-embed-height', id: 'nyc-wage-cost-gap', height: h }, '*');
+  };
+  window.addEventListener('load', postHeight);
+  window.addEventListener('resize', postHeight);
+  let n = 0;
+  const t = setInterval(() => { postHeight(); if (++n > 20) clearInterval(t); }, 300);
+}
+</script>
+</head>
+<body>
+<main class="card">
+
+  <header class="head">
+    <div class="kicker">The prosperity equation</div>
+    <h1>The wage–cost gap, and why rents go unpaid</h1>
+    <p class="dek">Productivity has climbed steadily since the 1970s. Wages for the bottom half of American earners have not. In New York City, that long divergence is showing up at the rent ledger: <b>roughly six in ten New Yorkers are economically insecure</b>, and rent collection in affordable housing has been sliding since 2017.</p>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><div class="num">62%</div><div class="lbl">New Yorkers economically insecure</div></div>
+    <div class="stat"><div class="num">1 in 3</div><div class="lbl">Holds a "good job" w/ benefits</div></div>
+    <div class="stat"><div class="num">40%</div><div class="lbl">Tax-credit tenants rent-burdened (U.S.)</div></div>
+  </div>
+
+  <section class="section">
+    <div class="section-title">U.S. productivity vs. real wages, bottom half of earners</div>
+    <div class="section-sub">Indexed to 1973 = 100, inflation-adjusted</div>
+    <div class="divergence">
+      <svg viewBox="0 0 800 300" preserveAspectRatio="none" aria-label="Productivity vs wages chart">
+        <g stroke="#dddddd" stroke-width="1">
+          <line x1="60" y1="40" x2="780" y2="40"/>
+          <line x1="60" y1="100" x2="780" y2="100"/>
+          <line x1="60" y1="160" x2="780" y2="160"/>
+          <line x1="60" y1="220" x2="780" y2="220"/>
+        </g>
+        <g font-family="halyard-text,sans-serif" font-size="11" fill="#707175" font-weight="700">
+          <text x="50" y="44" text-anchor="end">240</text>
+          <text x="50" y="104" text-anchor="end">200</text>
+          <text x="50" y="164" text-anchor="end">160</text>
+          <text x="50" y="224" text-anchor="end">120</text>
+          <text x="50" y="244" text-anchor="end">100</text>
+        </g>
+        <line x1="60" y1="240" x2="780" y2="240" stroke="#050507" stroke-width="1.5"/>
+        <g font-family="halyard-text,sans-serif" font-size="11" fill="#707175" font-weight="700" text-anchor="middle">
+          <text x="60" y="265">1973</text>
+          <text x="270" y="265">1990</text>
+          <text x="480" y="265">2005</text>
+          <text x="780" y="265">2024</text>
+        </g>
+        <!-- Productivity: 100 in 1973 -> ~252 in 2024. y at 100 = 240; y at 252 = 240-(152/140)*180? scale: 100->240, 240->40, so each unit = 200/140 = 1.43 px. y = 240 - (val-100)*1.43 -->
+        <polyline fill="none" stroke="#ff7c53" stroke-width="2.5"
+          points="60,240 200,210 340,170 480,135 620,100 780,52"/>
+        <!-- Real wages bottom 50%: ~100 -> ~111 (flat-ish, slight gain). y = 240 - 11*1.43 ≈ 224 -->
+        <polyline fill="none" stroke="#394882" stroke-width="2.5"
+          points="60,240 200,235 340,232 480,228 620,226 780,224"/>
+        <g font-family="halyard-text,sans-serif" font-size="12" font-weight="700">
+          <text x="780" y="48" fill="#ff7c53" text-anchor="end">Productivity ↑ 152%</text>
+          <text x="780" y="218" fill="#394882" text-anchor="end">Real wages, bottom 50%: roughly flat</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">New York City affordable-housing rent collection</div>
+    <div class="section-sub">Collection rate and share of projects with collections under 80%, 2017 vs. latest</div>
+    <div class="collection-grid">
+      <div class="coll">
+        <h3>Rent collection rate</h3>
+        <div class="coll-pair">
+          <div class="coll-then">
+            <div class="coll-num">~97%</div>
+            <div class="coll-yr">2017</div>
+          </div>
+          <div class="coll-arrow">→</div>
+          <div class="coll-now">
+            <div class="coll-num">~92%</div>
+            <div class="coll-yr">Latest</div>
+          </div>
+        </div>
+      </div>
+      <div class="coll">
+        <h3>Projects with collections &lt;80%</h3>
+        <div class="coll-pair">
+          <div class="coll-then">
+            <div class="coll-num">1×</div>
+            <div class="coll-yr">2017 baseline</div>
+          </div>
+          <div class="coll-arrow">→</div>
+          <div class="coll-now">
+            <div class="coll-num">&gt;3×</div>
+            <div class="coll-yr">Latest</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <h3>Methodology</h3>
+    <p><b>Source:</b> Abby Jo Sigal and Molly Wasow Park for Vital City. Productivity-vs-wage divergence: Economic Policy Institute analysis of U.S. Bureau of Labor Statistics productivity series and Current Population Survey real wages for the bottom 50% of earners, indexed to 1973 = 100. Rent collection: industry data on Low Income Housing Tax Credit and other regulated affordable-housing portfolios in New York City, 2017 and most recent year cited in the essay. Economic insecurity and "good job" share: New York City Comptroller, <i>The State of Job Quality in New York City</i>.</p>
+    <p><b>How to read this:</b> The productivity line is total nonfarm output per hour worked. The wage line tracks median real hourly earnings for the bottom 50% of earners, in 2024 dollars. The rent-collection panel compares the 2017 baseline with the most recent industry-reported figure; "&gt;3×" is the essay's characterization of the share of projects that have crossed below the 80% collection threshold.</p>
+    <p><b>Limitations:</b> The productivity-wage divergence is well documented but its magnitude depends on which deflator is used. Rent-collection figures vary across operators and reporting frameworks; treat the levels as illustrative of direction, not as official audit results.</p>
+  </footer>
+
+</main>
+</body>
+</html>
