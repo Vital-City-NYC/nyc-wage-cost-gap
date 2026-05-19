@@ -51,7 +51,8 @@ body.embed .card{border:none;max-width:none;}
 
 .foot{padding:18px 24px 22px;background:var(--vc-paper);}
 .foot h3{font-weight:700;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--vc-charcoal);margin-bottom:8px;}
-.foot p{font-size:.78rem;line-height:1.55;color:var(--vc-charcoal);max-width:72ch;margin-bottom:6px;}
+.foot a{color:var(--vc-black);text-decoration:underline;text-decoration-color:var(--vc-cloud);text-underline-offset:2px;}
+.foot p{font-size:.68rem;line-height:1.45;color:var(--vc-charcoal);max-width:72ch;margin-bottom:6px;}
 
 @media (max-width:640px){
   .stats{grid-template-columns:1fr;}
@@ -166,7 +167,7 @@ if (new URLSearchParams(location.search).get('embed') === '1') {
 
   <footer class="foot">
     <h3>Methodology</h3>
-    <p><b>Source:</b> Abby Jo Sigal and Molly Wasow Park for Vital City. Productivity-vs-wage divergence: Economic Policy Institute analysis of U.S. Bureau of Labor Statistics productivity series and Current Population Survey real wages for the bottom 50% of earners, indexed to 1973 = 100. Rent collection: industry data on Low Income Housing Tax Credit and other regulated affordable-housing portfolios in New York City, 2017 and most recent year cited in the essay. Economic insecurity and "good job" share: New York City Comptroller, <i>The State of Job Quality in New York City</i>.</p>
+    <p><b>Source:</b> Productivity-vs-wage divergence: <a href="https://www.epi.org/productivity-pay-gap/" target="_blank" rel="noopener">Economic Policy Institute</a> analysis of <a href="https://www.bls.gov/lpc/" target="_blank" rel="noopener">U.S. Bureau of Labor Statistics labor productivity</a> and <a href="https://www.bls.gov/cps/" target="_blank" rel="noopener">Current Population Survey</a> real wages for the bottom 50% of earners, indexed to 1973 = 100. Rent collection: industry data on Low-Income Housing Tax Credit and other regulated affordable-housing portfolios in New York City, 2017 and most recent year cited in the essay. Economic insecurity and "good job" share: <a href="https://comptroller.nyc.gov/reports/the-state-of-job-quality-in-new-york-city/" target="_blank" rel="noopener">New York City Comptroller, <i>The State of Job Quality in New York City</i></a>.</p>
     <p><b>How to read this:</b> The productivity line is total nonfarm output per hour worked. The wage line tracks median real hourly earnings for the bottom 50% of earners, in 2024 dollars. The rent-collection panel compares the 2017 baseline with the most recent industry-reported figure; "&gt;3×" is the essay's characterization of the share of projects that have crossed below the 80% collection threshold.</p>
     <p><b>Limitations:</b> The productivity-wage divergence is well documented but its magnitude depends on which deflator is used. Rent-collection figures vary across operators and reporting frameworks; treat the levels as illustrative of direction, not as official audit results.</p>
   </footer>
