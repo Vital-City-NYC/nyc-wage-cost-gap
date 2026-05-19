@@ -41,13 +41,10 @@ body.embed .card{border:none;max-width:none;}
 .divergence svg{width:100%;height:100%;display:block;}
 
 .collection-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
-.coll{padding:14px 16px;background:var(--vc-paper);border:1px solid var(--vc-cloud);}
-.coll h3{font-weight:700;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--vc-charcoal);margin-bottom:10px;}
-.coll-pair{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;}
-.coll-then,.coll-now{flex:1;}
-.coll-num{font-family:var(--vc-serif);font-weight:300;font-size:2rem;line-height:1;}
-.coll-yr{font-size:.7rem;color:var(--vc-charcoal);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:4px;}
-.coll-arrow{font-family:var(--vc-serif);font-size:1.4rem;color:var(--vc-magenta);align-self:center;}
+.coll{padding:16px 18px;background:var(--vc-paper);border:1px solid var(--vc-cloud);}
+.coll h3{font-weight:700;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--vc-charcoal);margin-bottom:12px;}
+.coll-num{font-family:var(--vc-serif);font-weight:300;font-size:2.4rem;line-height:1;color:var(--vc-magenta);}
+.coll-yr{font-size:.74rem;color:var(--vc-charcoal);font-weight:300;margin-top:6px;}
 
 .foot{padding:18px 24px 22px;background:var(--vc-paper);}
 .foot h3{font-weight:700;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--vc-charcoal);margin-bottom:8px;}
@@ -92,75 +89,18 @@ if (new URLSearchParams(location.search).get('embed') === '1') {
   </div>
 
   <section class="section">
-    <div class="section-title">U.S. productivity vs. real wages, bottom half of earners</div>
-    <div class="section-sub">Indexed to 1973 = 100, inflation-adjusted</div>
-    <div class="divergence">
-      <svg viewBox="0 0 800 300" preserveAspectRatio="none" aria-label="Productivity vs wages chart">
-        <g stroke="#dddddd" stroke-width="1">
-          <line x1="60" y1="40" x2="780" y2="40"/>
-          <line x1="60" y1="100" x2="780" y2="100"/>
-          <line x1="60" y1="160" x2="780" y2="160"/>
-          <line x1="60" y1="220" x2="780" y2="220"/>
-        </g>
-        <g font-family="halyard-text,sans-serif" font-size="11" fill="#707175" font-weight="700">
-          <text x="50" y="44" text-anchor="end">240</text>
-          <text x="50" y="104" text-anchor="end">200</text>
-          <text x="50" y="164" text-anchor="end">160</text>
-          <text x="50" y="224" text-anchor="end">120</text>
-          <text x="50" y="244" text-anchor="end">100</text>
-        </g>
-        <line x1="60" y1="240" x2="780" y2="240" stroke="#050507" stroke-width="1.5"/>
-        <g font-family="halyard-text,sans-serif" font-size="11" fill="#707175" font-weight="700" text-anchor="middle">
-          <text x="60" y="265">1973</text>
-          <text x="270" y="265">1990</text>
-          <text x="480" y="265">2005</text>
-          <text x="780" y="265">2024</text>
-        </g>
-        <!-- Productivity: 100 in 1973 -> ~252 in 2024. y at 100 = 240; y at 252 = 240-(152/140)*180? scale: 100->240, 240->40, so each unit = 200/140 = 1.43 px. y = 240 - (val-100)*1.43 -->
-        <polyline fill="none" stroke="#ff7c53" stroke-width="2.5"
-          points="60,240 200,210 340,170 480,135 620,100 780,52"/>
-        <!-- Real wages bottom 50%: ~100 -> ~111 (flat-ish, slight gain). y = 240 - 11*1.43 ≈ 224 -->
-        <polyline fill="none" stroke="#394882" stroke-width="2.5"
-          points="60,240 200,235 340,232 480,228 620,226 780,224"/>
-        <g font-family="halyard-text,sans-serif" font-size="12" font-weight="700">
-          <text x="780" y="48" fill="#ff7c53" text-anchor="end">Productivity ↑ 152%</text>
-          <text x="780" y="218" fill="#394882" text-anchor="end">Real wages, bottom 50%: roughly flat</text>
-        </g>
-      </svg>
-    </div>
-  </section>
-
-  <section class="section">
     <div class="section-title">New York City affordable-housing rent collection</div>
-    <div class="section-sub">Collection rate and share of projects with collections under 80%, 2017 vs. latest</div>
+    <div class="section-sub">What Sigal and Park report has changed in regulated affordable housing since 2017.</div>
     <div class="collection-grid">
       <div class="coll">
         <h3>Rent collection rate</h3>
-        <div class="coll-pair">
-          <div class="coll-then">
-            <div class="coll-num">~97%</div>
-            <div class="coll-yr">2017</div>
-          </div>
-          <div class="coll-arrow">→</div>
-          <div class="coll-now">
-            <div class="coll-num">~92%</div>
-            <div class="coll-yr">Latest</div>
-          </div>
-        </div>
+        <div class="coll-num">−~5 pts</div>
+        <div class="coll-yr">since 2017</div>
       </div>
       <div class="coll">
-        <h3>Projects with collections &lt;80%</h3>
-        <div class="coll-pair">
-          <div class="coll-then">
-            <div class="coll-num">1×</div>
-            <div class="coll-yr">2017 baseline</div>
-          </div>
-          <div class="coll-arrow">→</div>
-          <div class="coll-now">
-            <div class="coll-num">&gt;3×</div>
-            <div class="coll-yr">Latest</div>
-          </div>
-        </div>
+        <h3>Projects with collections under 80%</h3>
+        <div class="coll-num">&gt;3×</div>
+        <div class="coll-yr">more than tripled since 2017</div>
       </div>
     </div>
   </section>
@@ -168,8 +108,8 @@ if (new URLSearchParams(location.search).get('embed') === '1') {
   <footer class="foot">
     <h3>Methodology</h3>
     <p><b>Source:</b> Productivity-vs-wage divergence: <a href="https://www.epi.org/productivity-pay-gap/" target="_blank" rel="noopener">Economic Policy Institute</a> analysis of <a href="https://www.bls.gov/lpc/" target="_blank" rel="noopener">U.S. Bureau of Labor Statistics labor productivity</a> and <a href="https://www.bls.gov/cps/" target="_blank" rel="noopener">Current Population Survey</a> real wages for the bottom 50% of earners, indexed to 1973 = 100. Rent collection: industry data on Low-Income Housing Tax Credit and other regulated affordable-housing portfolios in New York City, 2017 and most recent year cited in the essay. Economic insecurity and "good job" share: <a href="https://comptroller.nyc.gov/reports/the-state-of-job-quality-in-new-york-city/" target="_blank" rel="noopener">New York City Comptroller, <i>The State of Job Quality in New York City</i></a>.</p>
-    <p><b>How to read this:</b> The productivity line is total nonfarm output per hour worked. The wage line tracks median real hourly earnings for the bottom 50% of earners, in 2024 dollars. The rent-collection panel compares the 2017 baseline with the most recent industry-reported figure; "&gt;3×" is the essay's characterization of the share of projects that have crossed below the 80% collection threshold.</p>
-    <p><b>Limitations:</b> The productivity-wage divergence is well documented but its magnitude depends on which deflator is used. Rent-collection figures vary across operators and reporting frameworks; treat the levels as illustrative of direction, not as official audit results.</p>
+    <p><b>How to read this:</b> The two figures come directly from Sigal and Park's essay. "−~5 pts" reflects the authors' statement that "rent collection in affordable housing has dropped almost five percentage points since 2017"; the absolute starting and ending levels are not specified. "More than tripled" describes the share of regulated affordable-housing projects in New York City with rent-collection rates below 80%, also relative to 2017.</p>
+    <p><b>Limitations:</b> Rent-collection figures vary across operators and reporting frameworks; treat the changes as the authors' characterization of trend direction, not as audited industry totals. The 1973 productivity-vs-wage divergence cited in the essay is well documented in U.S. Bureau of Labor Statistics and Economic Policy Institute data but is not depicted here because the authors do not specify magnitudes.</p>
   </footer>
 
 </main>
